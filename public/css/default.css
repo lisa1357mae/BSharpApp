@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #bottom {
 	margin-top: 10px;
 	background-color: #3399ff;
@@ -29,13 +28,14 @@
 #reviewbox{
 	width: 500px;
 	height: 500px;
+	background-image: 
 }
 
 #char_count{
 	border: solid;
 	padding: 5px;
 }
-=======
+
 /*home.erb*/
 .img-fluid  {
 
@@ -81,4 +81,4 @@ color: #ffff00;
 background: #000;
 border: 1px solid #fff;
 }
->>>>>>> d29ab0b22301437f5241e60a1e76b1118a8031ec
+

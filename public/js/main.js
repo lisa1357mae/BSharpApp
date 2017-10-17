@@ -22,3 +22,9 @@ classInfo.innerHTML = ‘write your own review”
 document.getElementById("close").addEventListener("click", function () {
 		modal.style.display = "none";
 	});
+
+document.getElementById("submit").addEventListener("click", function(){
+	
+});
+
+

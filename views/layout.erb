@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="/css/default.css"/>
-	<title></title>
-</head>
-<body>
-
-
-<%= erb :addreview %>
-<%= erb :bottompagefooter %>
-</body>
-</html>
-=======
  <!DOCTYPE html>
 <html>
    <head>
@@ -26,9 +11,10 @@
        <link rel="stylesheet" href="/css/default.css"/>
    </head>
    <body class="<%= @class %>">
-
+   	 	
       <%= yield %>
       <script src="/js/main.js"></script>
+      <%= erb :bottompagefooter %>
    </body>
 </html>
->>>>>>> d29ab0b22301437f5241e60a1e76b1118a8031ec
+
