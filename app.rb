@@ -17,7 +17,7 @@ get '/' do
   erb :home
 end
 
-get '/' do
+get '/profile' do
   erb :profile
 end
 
@@ -25,13 +25,13 @@ get '/review' do
   erb :addreview
 end
 
-get '/concertShow' do
-  erb :addconcertShow
+get '/concert' do
+  erb :addconcert
 end
 
 
 post '/login' do
-  erb :addlogin
+  erb :login
 end
 
 
