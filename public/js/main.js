@@ -1,9 +1,15 @@
-let concertShow = document.querySelector(“.concertShow”)
+
+
+
+
+
+
+/*let concertShow = document.querySelector(“.concertShow”)
 
 review = document.querySelector(“.review”)
 
 
-
+/*
 
 concertShow.addEventListner(“click”, function() {
 modal.style.display = “block”;

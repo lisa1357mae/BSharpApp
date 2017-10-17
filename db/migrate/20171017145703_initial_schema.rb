@@ -8,6 +8,7 @@ class InitialSchema < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password
       t.string :bio
+      t.string :photo
     end
 
     create_table :events do |t|

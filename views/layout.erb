@@ -11,10 +11,10 @@
        <link rel="stylesheet" href="/css/default.css"/>
    </head>
    <body class="<%= @class %>">
-
+		 <div id="message"><%= flash[:message] %></div>
 
   <%= yield %>
       <script src="/js/main.js"></script>
-			 <%= erb :bottompagefooter %>
+
    </body>
 </html>
