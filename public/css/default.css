@@ -1,0 +1,36 @@
+#bottom {
+	margin-top: 10px;
+	background-color: #3399ff;
+	opacity: .7;
+	height: 40px;
+	border: 1px solid #FAF3DD; 
+}
+
+#copyright {
+	font-size: 12px;
+	color: #FAF3DD;
+	margin-left: 3px;
+}
+
+.social {
+	text-decoration: none;
+}
+
+.social-img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin-right: 3px;
+	margin-top: 3px;
+}
+
+
+#reviewbox{
+	width: 500px;
+	height: 500px;
+}
+
+#char_count{
+	border: solid;
+	padding: 5px;
+}
