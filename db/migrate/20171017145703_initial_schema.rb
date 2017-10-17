@@ -1,11 +1,5 @@
+
 class InitialSchema < ActiveRecord::Migration[5.1]
-  def change
-  end
-end
-
-
-
-class BuildInitialSchema < ActiveRecord::Migration[5.1]
   def change
 
     create_table :users do |t|
@@ -18,11 +12,16 @@ class BuildInitialSchema < ActiveRecord::Migration[5.1]
 
     create_table :events do |t|
       t.references :user, foreign_key: {to_table: :users}, index: true
-      t.references :question, foreign_key: {to_table: :questions }, index:true
-      t.integer :guess
+      t.string :photo
+      t.string :name
     end
 
-    create_table :review do |t|
-      t.references
+    create_table :reviews do |t|
+      t.references :user, foreign_key: {to_table: :users}, index: true
+      t.references :event, foreign_key: {to_table: :events}, index: true
+      t.string :content
+      t.string :vote
+      t.datetime :created_at
+    end
   end
 end
