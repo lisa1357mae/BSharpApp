@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #bottom {
 	margin-top: 10px;
 	background-color: #3399ff;
@@ -34,3 +35,50 @@
 	border: solid;
 	padding: 5px;
 }
+=======
+/*home.erb*/
+.img-fluid  {
+
+	    width: 100%;
+	    height: auto;
+
+
+}
+.img-circle {
+		border-radius: 50%;
+}
+
+* {
+	font-family: 'Alegreya Sans SC', sans-serif;
+	background-color:
+}
+
+.home h1 {
+font-size: 100px;
+}
+
+.container {
+	background-color: #958ba0;
+	text-align: center;
+}
+
+/* home buttons css*/
+
+input.MyButton {
+width: 300px;
+padding: 20px;
+cursor: pointer;
+font-weight: bold;
+font-size: 150%;
+background: #3366cc;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+}
+
+input.MyButton:hover {
+color: #ffff00;
+background: #000;
+border: 1px solid #fff;
+}
+>>>>>>> d29ab0b22301437f5241e60a1e76b1118a8031ec
