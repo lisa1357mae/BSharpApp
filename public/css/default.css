@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+/* head */
 #bottom {
 	margin-top: 10px;
 	background-color: #3399ff;
 	opacity: .7;
 	height: 40px;
-	border: 1px solid #FAF3DD; 
+	border: 1px solid #FAF3DD;
 }
 
 #copyright {
@@ -35,7 +35,7 @@
 	border: solid;
 	padding: 5px;
 }
-=======
+
 /*home.erb*/
 .img-fluid  {
 
@@ -81,4 +81,3 @@ color: #ffff00;
 background: #000;
 border: 1px solid #fff;
 }
->>>>>>> d29ab0b22301437f5241e60a1e76b1118a8031ec
