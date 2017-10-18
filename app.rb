@@ -46,6 +46,15 @@ post '/events/:id/review' do
   @event = Event.find(params[:id])
 
 end
+##
+get '/review' do
+  erb :addreview
+end
+
+post '/review' do
+
+##
+end
 
 get '/concert' do
   erb :addconcert
