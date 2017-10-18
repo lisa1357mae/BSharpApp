@@ -9,6 +9,10 @@ require './models'
 set :database, {adapter: 'sqlite3', database: 'bsharp.sqlite3'}
 enable :sessions
 
+before do
+  current_user
+end
+
 #Configure carrierwave
 CarrierWave.configure do |config|
   config.root = File.dirname(__FILE__) + "/public"
@@ -39,22 +43,25 @@ post '/profile' do
 end
 
 get '/events/:id/review' do
+  @event = Event.find(params[:id])
   erb :addreview
 end
 
-post '/events/:id/review' do
-  @event = Event.find(params[:id])
-
+post '/review' do
+  review = Review.new(
+    event_id: params[:event_id],
+    content: params[:message],
+    user_id: @current_user.id
+  )
+  review.save
+  erb :addreview
 end
 ##
 get '/review' do
   erb :addreview
 end
 
-post '/review' do
 
-##
-end
 
 get '/concert' do
   erb :addconcert
@@ -74,4 +81,8 @@ post '/login' do
    flash[:message] = "Oops, there's a problem "
     redirect back
   end
+end
+
+def current_user
+  @current_user = User.find(session[:user_id]) if session[:user_id]
 end
