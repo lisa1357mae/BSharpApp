@@ -1,0 +1,113 @@
+
+/* head */
+
+#bottom {
+
+	margin-top: 500px;
+	margin-top: 10px;
+	background-color: black;
+	opacity: .7;
+	height: 40px;
+	border: 1px solid #FAF3DD;
+	
+}
+
+#copyright {
+	font-size: 12px;
+	color: #FAF3DD;
+	margin-left: 3px;
+}
+
+.social {
+	text-decoration: none;
+}
+
+.social-img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin-right: 3px;
+	margin-top: 3px;
+}
+
+
+.reviewbox{
+	width: 200px;
+	height: 300px;
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin-left: 5px;
+	
+}	
+
+#char_count{
+	border: solid;
+	padding: 1px;
+}
+
+.link{
+	width: 200px;
+	height: 50px;
+/*	border: solid;*/
+	position: left;
+	display: inline;
+	margin-left: 350px;
+	float: left;
+	padding-left: 95px;
+
+}
+
+.reviewpage{
+	float: left;
+	padding-top: 20px;
+}
+
+
+
+/*home.erb*/
+.img-fluid  {
+
+	    width: 100%;
+	    height: auto;
+
+
+}
+.img-circle {
+		border-radius: 50%;
+}
+
+* {
+	font-family: 'Alegreya Sans SC', sans-serif;
+	background-color:
+}
+
+.home h1 {
+font-size: 100px;
+}
+
+.container {
+	background-color: #958ba0;
+	text-align: center;
+}
+
+/* home buttons css*/
+
+input.MyButton {
+width: 300px;
+padding: 20px;
+cursor: pointer;
+font-weight: bold;
+font-size: 150%;
+background: #3366cc;
+color: #fff;
+border: 1px solid #3366cc;
+border-radius: 10px;
+}
+
+input.MyButton:hover {
+color: #ffff00;
+background: #000;
+border: 1px solid #fff;
+}
+

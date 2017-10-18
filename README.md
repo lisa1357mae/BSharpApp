@@ -28,7 +28,7 @@ A user should be able to
     Post micro-blogs (less than 150 characters)
     See a profile page with all of their account details and micro-blog posts to date
     Visit other users’ profile pages
-    See a page with the 10 most recent posts (the “feed”)
+    See a page with the 10 most recent posts (the "feed")
 
 Your project should look good, don’t make the front end bare-bones. Feel free to use JavaScript for awesome front end interactions! Good luck, have fun, and learn a lot! You have until the end of class on Friday for class time as well as the weekend if you’d like to make any final tweaks before your project is submitted.
 
