@@ -2,7 +2,9 @@
 /* head */
 
 #bottom {
+
 	margin-top: 500px;
+	margin-top: 10px;
 	background-color: black;
 	opacity: .7;
 	height: 40px;
