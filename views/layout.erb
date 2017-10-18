@@ -11,6 +11,7 @@
        <link rel="stylesheet" href="/css/default.css"/>
    </head>
    <body class="<%= @class %>">
+
 		 <div id="message"><%= flash[:message] %></div>
      <% if @current_user %>
       <img src="<%= @current_user.photo.url %>"/>
