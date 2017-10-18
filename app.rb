@@ -27,17 +27,23 @@ get '/events' do
   erb :events
 end
 
+get '/events/:id' do
+  @event = Event.find(params[:id])
+  erb :event
+end
+
 post '/profile' do
   @current_user.photo = params[:photo]
   @current_user.save!
   redirect back
 end
 
-get '/review' do
+get '/events/:id/review' do
   erb :addreview
 end
 
-post '/review' do
+post '/events/:id/review' do
+  @event = Event.find(params[:id])
 
 end
 
