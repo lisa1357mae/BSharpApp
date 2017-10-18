@@ -12,9 +12,12 @@
    </head>
    <body class="<%= @class %>">
 		 <div id="message"><%= flash[:message] %></div>
+     <% if @current_user %>
+      <img src="<%= @current_user.photo.url %>" />
+     <% end %>
 
   <%= yield %>
       <script src="/js/main.js"></script>
 
-   </body>
+		</body>
 </html>

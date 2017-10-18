@@ -22,6 +22,11 @@ get '/profile' do
   erb :profile
 end
 
+get '/events' do
+  @events = Event.all
+  erb :events
+end
+
 post '/profile' do
   @current_user.photo = params[:photo]
   @current_user.save!
@@ -30,6 +35,10 @@ end
 
 get '/review' do
   erb :addreview
+end
+
+post '/review' do
+
 end
 
 get '/concert' do
