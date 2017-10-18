@@ -28,8 +28,8 @@ get '/events' do
 end
 
 get '/events/:id' do
-  @events = Event.all
-  erb :events
+  @event = Event.find(params[:id])
+  erb :event
 end
 
 post '/profile' do
@@ -38,11 +38,12 @@ post '/profile' do
   redirect back
 end
 
-get '/review' do
+get '/events/:id/review' do
   erb :addreview
 end
 
-post '/review' do
+post '/events/:id/review' do
+  @event = Event.find(params[:id])
 
 end
 
