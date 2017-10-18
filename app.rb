@@ -27,6 +27,11 @@ get '/events' do
   erb :events
 end
 
+get '/events/:id' do
+  @events = Event.all
+  erb :events
+end
+
 post '/profile' do
   @current_user.photo = params[:photo]
   @current_user.save!
