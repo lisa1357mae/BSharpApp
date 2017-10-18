@@ -61,7 +61,6 @@ get '/review' do
   erb :addreview
 end
 
-
 get '/concert' do
   erb :addconcert
 end
