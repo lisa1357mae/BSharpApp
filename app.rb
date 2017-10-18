@@ -47,6 +47,13 @@ post '/events/:id/review' do
 
 end
 
+get '/review' do
+  erb :addreview
+end
+
+post '/review' do
+  end
+
 get '/concert' do
   erb :addconcert
 end
