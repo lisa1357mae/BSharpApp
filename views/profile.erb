@@ -1,29 +1,11 @@
 
 <% if @current_user %>
-<form>
-
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname">
-</form>
-
-<form>
-email: <br></br>
-<input type="email" name="email">
-</form>
-<br></br>
-<p>upload profile photo</p>
-<form action='/profile' method="POST" enctype="multipart/form-data">
-    <input type="file" name="photo">
-    <button type="submit">UPLOAD</button>
-
-  </form>
 <img src="<%= user.photo.url %>" width="200px">
+<% end %>
 
-  <p>
-
-
-  </p>
-
-  <% end %>
+  <% @reviews.each do |review| %>
+  <div class="review">
+    <h3><%= review.event.name %></h3>
+    <p><%= review.content %></p>
+  </div>
+  <%end%>

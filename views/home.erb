@@ -4,8 +4,9 @@
 
 
   <title>BSharp</title>
-
+  <% erb :newuser %>
     <%= erb :login %>
+  <input class="newuserbutton" type="button" value="Make Profile" onclick="window.location.href='/newuser'" />
 
 <div class="jumbotron text-center">
 
@@ -25,10 +26,10 @@
         </form>
       </div>
       <div class="col-sm-4">
-        <h3 style="color:black;font-size:300%;">Create Profile</h3>
+        <h3 style="color:black;font-size:300%;">My Page</h3>
 
         <p style="color:#134b6d; font-size:150%;">make a profile to begin</p>
-        <input class="MyButton" type="button" value="make profile" onclick="window.location.href='/profile'" />
+        <input class="MyButton" type="button" value="My Page" onclick="window.location.href='/profile'" />
         </form>
       </div>
       <div class="review">

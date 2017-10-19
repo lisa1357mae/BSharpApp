@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20171017145703) do
     t.string "vote"
     t.datetime "created_at"
     t.index ["event_id"], name: "index_reviews_on_event_id"
+
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

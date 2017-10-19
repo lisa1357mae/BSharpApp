@@ -11,7 +11,7 @@ end
 
 class Review < ActiveRecord::Base
   belongs_to :user
-  belongs_to :events
+  belongs_to :event
 end
 
 class Event < ActiveRecord::Base
@@ -20,7 +20,3 @@ class Event < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 end
-
-
-
-

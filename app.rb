@@ -5,6 +5,8 @@ require 'sinatra/flash'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 require './models'
+require 'dotenv/load'
+require 'sendgrid-ruby'
 
 set :database, {adapter: 'sqlite3', database: 'bsharp.sqlite3'}
 enable :sessions
@@ -23,8 +25,9 @@ get '/' do
 end
 
 get '/profile' do
+  @reviews = Review.where(user_id: @current_user).where.not(event_id: nil)
   erb :profile, locals: {user: @current_user}
-end
+
 
 get '/events' do
   @events = Event.all
@@ -34,17 +37,22 @@ end
 get '/events/:id' do
   @event = Event.find(params[:id])
   erb :event
+  redirect '/events1'
+
 end
+
 
 post '/profile' do
   @current_user.photo = params[:photo]
   @current_user.save!
-  redirect back
+redirect back
 end
 
 get '/events/:id/review' do
   @event = Event.find(params[:id])
   erb :addreview
+
+
 end
 
 post '/review' do
@@ -55,10 +63,12 @@ post '/review' do
   )
   review.save
   erb :addreview
+  redirect '/profile'
 end
 ##
 get '/review' do
   erb :addreview
+
 end
 
 
