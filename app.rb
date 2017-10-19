@@ -71,8 +71,6 @@ get '/review' do
 
 end
 
-
-
 get '/concert' do
   erb :addconcert
 end
@@ -102,6 +100,10 @@ get '/logout' do
   session[:user_id] = nil
   flash[:message] = "Logged out"
   redirect '/'
+end
+
+post '/submitform' do
+  erb :profile
 end
 
 def current_user
