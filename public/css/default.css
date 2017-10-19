@@ -9,7 +9,7 @@
 	opacity: .7;
 	height: 40px;
 	border: 1px solid #FAF3DD;
-	
+
 }
 
 #copyright {
@@ -38,8 +38,8 @@
 	display: inline-block;
 	float: left;
 	margin-left: 5px;
-	
-}	
+
+}
 
 #char_count{
 	border: solid;
@@ -110,4 +110,3 @@ color: #ffff00;
 background: #000;
 border: 1px solid #fff;
 }
-
