@@ -23,7 +23,7 @@ get '/' do
 end
 
 get '/profile' do
-  erb :profile
+  erb :profile, locals: {user: @current_user}
 end
 
 get '/events' do
@@ -65,7 +65,6 @@ get '/concert' do
   erb :addconcert
 end
 
-
 post '/login' do
   p "INSIDE LOGIN"
   p params
@@ -80,6 +79,12 @@ post '/login' do
     redirect back
   end
 end
+get '/logout' do
+  session[:user_id] = nil
+  flash[:message] = "Logged Out"
+  redirect '/'
+end
+
 
 get '/logout' do
   session[:user_id] = nil
