@@ -1,6 +1,8 @@
 
 /* head */
 
+
+
 #bottom {
 
 	margin-top: 500px;
@@ -49,7 +51,7 @@
 .reviewpage{
 	float: left;
 	padding-top: 20px;
-	text-align: center;
+	text-align: center; 
 }
 
 
