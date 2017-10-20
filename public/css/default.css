@@ -55,6 +55,16 @@
 
 
 
+.review {
+	float: auto;
+	position: relative;
+	padding: 50px;
+	margin-left: 100px;
+	margin-right: 50px;
+}
+
+
+
 /*home.erb*/
 .img-fluid  {
 
