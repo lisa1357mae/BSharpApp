@@ -1,12 +1,15 @@
 
-<% if @current_user %>
-<h1><%= user.first %> 's Profile</h1>
-<% if user.photo.url|| !me %>
+
+
+<% if user %>
+<h1><%= user.first %>'s Profile</h1>
+<% if user.photo.url || !me %>
 <img src="<%= user.photo.url %>" width="200px">
 <% else %>
 <form action='/profile' method="POST" enctype="multipart/form-data">
-    <input type="file" name="photo">
-    <button type="submit">UPLOAD</button>
+  <input type="file" name="photo">
+  <button type="submit">UPLOAD</button>
+
 </form>
 <% end %>
 <% end %>
@@ -34,3 +37,5 @@
 
 
  
+
+  

@@ -1,3 +1,7 @@
+require 'sinatra/activerecord'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 class PhotoUploader < CarrierWave::Uploader::Base
   storage :file
 end
@@ -11,7 +15,7 @@ end
 
 class Review < ActiveRecord::Base
   belongs_to :user
-  belongs_to :events
+  belongs_to :event
 end
 
 class Event < ActiveRecord::Base
@@ -20,7 +24,3 @@ class Event < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 end
-
-
-
-

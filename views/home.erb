@@ -4,31 +4,29 @@
 
 
   <title>BSharp</title>
-
+  <% erb :newuser %>
     <%= erb :login %>
-
+    <% if ! @current_user %>
+  <input class="newuserbutton" type="button" value="Make Profile" onclick="window.location.href='/newuser'" />
+<%end%>
 <div class="jumbotron text-center">
 
-  <h1 style="color:#1d699b;font-size:600%;">Bsh#rp</h1>
+  <h1 style="color:#1d699b;font-size:600%;">Bs&#x266f;arp</h1>
     <p style="color:#black;font-size:200%;">find and review music and concerts near you</p>
   </div>
 
   <div class="container">
     <div class="row">
+
       <div class="concertShow">
         <form>
-
-        <h3 style="color:black;font-size:300%;">Post a Concert</h3>
-
-        <p style="color:#134b6d; font-size:150%;">post a concert you think is rad near you</p>
-        <input class="MyButton" type="button" value="post" onclick="window.location.href='/concert'" />
-        </form>
+  </form>
       </div>
       <div class="col-sm-4">
-        <h3 style="color:black;font-size:300%;">Create Profile</h3>
+        <h3 style="color:black;font-size:300%;">My Page</h3>
 
         <p style="color:#134b6d; font-size:150%;">make a profile to begin</p>
-        <input class="MyButton" type="button" value="make profile" onclick="window.location.href='/profile'" />
+        <input class="MyButton" type="button" value="My Page" onclick="window.location.href='/profile'" />
         </form>
       </div>
       <div class="review">

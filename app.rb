@@ -5,6 +5,8 @@ require 'sinatra/flash'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 require './models'
+require 'dotenv/load'
+require 'sendgrid-ruby'
 
 set :database, {adapter: 'sqlite3', database: 'bsharp.sqlite3'}
 enable :sessions
@@ -22,8 +24,35 @@ get '/' do
   erb :home
 end
 
+
+get '/newuser' do
+  erb :newuser
+end
+
+post '/newuser' do
+  names = params[:name].split(' ')
+  user = User.new(
+    first: names[0],
+    last: names[1],
+    email: params[:email],
+    password: params[:password]
+  )
+  user.save
+  session[:user_id] = user.id
+  redirect '/profile'
+end
+
 get '/profile' do
-  erb :profile, locals: {user: @current_user}
+  @reviews = Review.where(user_id: @current_user).where.not(event_id: nil)
+  @users = User.all
+  erb :profile, locals: {user: @current_user, me: true}
+end
+
+get '/profile/:id' do
+  @reviews = Review.where(user_id: params[:id]).where.not(event_id: nil)
+  @users = User.all
+  user = User.find_by(id: params[:id])
+  erb :profile, locals: {user: user, me: false}
 end
 
 get '/events' do
@@ -34,7 +63,10 @@ end
 get '/events/:id' do
   @event = Event.find(params[:id])
   erb :event
+  redirect '/events1'
+
 end
+
 
 post '/profile' do
   @current_user.photo = params[:photo]
@@ -45,6 +77,8 @@ end
 get '/events/:id/review' do
   @event = Event.find(params[:id])
   erb :addreview
+
+
 end
 
 post '/review' do
@@ -55,10 +89,12 @@ post '/review' do
   )
   review.save
   erb :addreview
+  redirect '/profile'
 end
 ##
 get '/review' do
   erb :addreview
+
 end
 
 get '/concert' do
@@ -79,16 +115,10 @@ post '/login' do
     redirect back
   end
 end
+
 get '/logout' do
   session[:user_id] = nil
   flash[:message] = "Logged Out"
-  redirect '/'
-end
-
-
-get '/logout' do
-  session[:user_id] = nil
-  flash[:message] = "Logged out"
   redirect '/'
 end
 
@@ -98,4 +128,10 @@ end
 
 def current_user
   @current_user = User.find(session[:user_id]) if session[:user_id]
+end
+
+post '/users/me/delete' do
+  session[:user_id] = nil
+  @current_user.destroy
+  redirect '/'
 end
