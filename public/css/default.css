@@ -52,7 +52,16 @@
 .reviewpage{
 	float: left;
 	padding-top: 20px;
-	text-align: center;
+	display: inline-block;
+}
+
+.review{
+	float: auto;
+	position: relative;
+	padding: 50px;
+	margin-left: 100px;
+	margin-right: 50px;
+	
 }
 
 
@@ -82,10 +91,6 @@ font-size: 100px;
 	text-align: center;
 }
 
-.col-sm-4 {
-	text-align: center;
-	padding-right: 50px;
-}
 
 /* home buttons css*/
 
