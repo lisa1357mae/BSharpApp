@@ -1,33 +1,36 @@
 
 <% if @current_user %>
-<form>
-
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname">
-</form>
-
-<form>
-email: <br></br>
-<input type="email" name="email">
-</form>
-<br></br>
-<p>upload profile photo</p>
+<h1><%= user.first %> 's Profile</h1>
+<% if user.photo.url|| !me %>
+<img src="<%= user.photo.url %>" width="200px">
+<% else %>
 <form action='/profile' method="POST" enctype="multipart/form-data">
     <input type="file" name="photo">
     <button type="submit">UPLOAD</button>
+</form>
+<% end %>
+<% end %>
 
-    <br>
-    <br>
-    <button type="submitform">Make Profile</button>
+<% @reviews.each do |review| %>
+<div class="review">
+<h3><%= review.event.name %></h3>
+<p><%= review.content %></p>
+</div>
+<% end %>
 
-  </form>
-<img src="<%= user.photo.url %>" width="200px">
+<% if me %>
+	<form action='/users/me/delete' method="POST">
+	<button type="submit">delete profile</button>
+	</form>
+	<% end %>
 
-  <p>
+<hr> 
+<h2>Other Profiles</h2>
+<ul>
+<% @users.each do |other_user| %>
+<li><a href='/profile/<%= other_user.id %>'<%= other_user.first %>'s profile page</a></li>
+<% end %>
+</ul>
 
 
-  </p>
-
-  <% end %>
+ 
