@@ -24,10 +24,36 @@ get '/' do
   erb :home
 end
 
+
+get '/newuser' do
+  erb :newuser
+end
+
+post '/newuser' do
+  names = params[:name].split(' ')
+  user = User.new(
+    first: names[0],
+    last: names[1],
+    email: params[:email],
+    password: params[:password]
+  )
+  user.save
+  session[:user_id] = user.id
+  redirect '/profile'
+end
+
 get '/profile' do
   @reviews = Review.where(user_id: @current_user).where.not(event_id: nil)
-  erb :profile, locals: {user: @current_user}
+  @users = User.all
+  erb :profile, locals: {user: @current_user, me: true}
+end
 
+get '/profile/:id' do
+  @reviews = Review.where(user_id: params[:id]).where.not(event_id: nil)
+  @users = User.all
+  user = User.find_by(id: params[:id])
+  erb :profile, locals: {user: user, me: false}
+end
 
 get '/events' do
   @events = Event.all
@@ -45,7 +71,7 @@ end
 post '/profile' do
   @current_user.photo = params[:photo]
   @current_user.save!
-redirect back
+  redirect back
 end
 
 get '/events/:id/review' do
@@ -89,16 +115,10 @@ post '/login' do
     redirect back
   end
 end
+
 get '/logout' do
   session[:user_id] = nil
   flash[:message] = "Logged Out"
-  redirect '/'
-end
-
-
-get '/logout' do
-  session[:user_id] = nil
-  flash[:message] = "Logged out"
   redirect '/'
 end
 
@@ -108,4 +128,10 @@ end
 
 def current_user
   @current_user = User.find(session[:user_id]) if session[:user_id]
+end
+
+post '/users/me/delete' do
+  session[:user_id] = nil
+  @current_user.destroy
+  redirect '/'
 end

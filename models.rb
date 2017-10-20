@@ -1,3 +1,7 @@
+require 'sinatra/activerecord'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 class PhotoUploader < CarrierWave::Uploader::Base
   storage :file
 end

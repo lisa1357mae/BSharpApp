@@ -1,6 +1,14 @@
 
-<% if @current_user %>
+<% if user %>
+<h1><%= user.first %>'s Profile</h1>
+<% if user.photo.url || !me %>
 <img src="<%= user.photo.url %>" width="200px">
+<% else %>
+<form action='/profile' method="POST" enctype="multipart/form-data">
+  <input type="file" name="photo">
+  <button type="submit">UPLOAD</button>
+</form>
+<% end %>
 <% end %>
 
   <% @reviews.each do |review| %>
@@ -9,3 +17,17 @@
     <p><%= review.content %></p>
   </div>
   <%end%>
+
+<% if me %>
+  <form action='/users/me/delete' method="POST">
+    <button type="submit">delete profile</button>
+  </form>
+<% end %>
+
+<hr>
+<h2>Other Profiles</h2>
+<ul>
+<% @users.each do |other_user| %>
+<li><a href='/profile/<%= other_user.id %>'><%= other_user.first %>'s profile page</a></li>
+<% end %>
+</ul>
